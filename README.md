@@ -1,4 +1,4 @@
-# Python Mathmagician Exercise
+# Python Sharp Shapes Exercise
 
 **Author**: Megan Ford July 2016 
 
@@ -12,10 +12,10 @@ Any/all images are for educational/example purposes only and are all rights rese
 ## Instructions
 
 
-NSS Back-End Milestone 2 (Command Line Interface) Exercise 1: 
+NSS Back-End Milestone 2 (Command Line Interface) Exercise 2: 
 
 
-[Requirements For Project](https://github.com/nashville-software-school/python-milestones/blob/master/02-command-line-applications/exercises/CLI_MATHMAGICIAN.md)
+[Requirements For Project](https://github.com/nashville-software-school/python-milestones/blob/master/02-command-line-applications/exercises/CLI_SHARP-SHAPES.md)
 
 
 
@@ -23,12 +23,12 @@ NSS Back-End Milestone 2 (Command Line Interface) Exercise 1:
 
 
 ``` 
-git clone https://github.com/MeganCFord/NSS-PY2-mathmagician.git
-cd 1-mathmagician
-python mathmagician.py
+git clone https://github.com/MeganCFord/NSS-PY2-sharpShapes.git
+cd 2-sharp-shapes
+python sharpshapes.py
 ```
 
-![screenshot](mathmagician-screenshot.jpg)
+![screenshot](sharpshapes-screenshot.jpg)
 
 
 ## License 
