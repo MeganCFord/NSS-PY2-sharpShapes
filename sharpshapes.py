@@ -26,17 +26,17 @@ class Square(Rectangle):
 
 class Rhombus(Shape):
     def calculate_area(self, diagonal_one, diagonal_two):
-        self.area = diagonal_one * diagonal_two
+        self.area = round((diagonal_one * diagonal_two), 2)
 
 
 class Parallelogram(Shape):
     def calculate_area(self, base, height):
-        self.area = base * height
+        self.area = round((base * height), 2)
 
 
 class Triangle(Shape):
     def calculate_area(self, base, height):
-        self.area = (base * height) / 2
+        self.area = round(((base * height) / 2), 2)
 
 
 class Circle(Shape):
@@ -47,32 +47,33 @@ class Circle(Shape):
 #######SOLIDS#######
 
 class Pyramid(Solid):
-    def calculate_volume(self):
-        self.volume = 4
+    # NOTE: this calculation works for a rectangular pyramid only
+    def calculate_volume(self, base_length, base_width, height):
+        self.volume = round(((base_length * base_width * height) / 3), 2)
 
 
 class Cone(Solid):
 
-    def calculate_volume(self):
-        self.volume = 4
+    def calculate_volume(self, radius, height):
+        self.volume = round(((radius * radius * height * math.pi)/3), 2)
 
 
 class Cylinder(Solid):
 
-    def calculate_volume(self):
-        self.volume = 4
+    def calculate_volume(self, radius, height):
+        self.volume = round((radius*radius*height * math.pi), 2)
 
 
 class Sphere(Solid):
-    def calculate_volume(self):
-        self.volume = 4
+    def calculate_volume(self, radius):
+        self.volume = round(((radius*radius*radius*math.pi*4)/3), 2)
 
 
 class Block(Solid):
-    def calculate_volume(self):
-        self.volume = 4
+    def calculate_volume(self, length, width, height):
+        self.volume = round((length * width * height), 2)
 
 
 class Cube(Block):
-    def calculate_volume(self):
-        self.volume = 4
+    def calculate_volume(self, side):
+        super().calculate_volume(side, side, side)

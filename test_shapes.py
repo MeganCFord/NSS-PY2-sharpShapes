@@ -67,30 +67,40 @@ class Test_shapes(unittest.TestCase):
         self.assertIsInstance(test_pyramid, Pyramid)
         self.assertIsInstance(test_pyramid, Solid)
         self.assertEqual(test_pyramid.volume, 0)
+        test_pyramid.calculate_volume(2, 2, 2)
+        self.assertEqual(test_pyramid.volume, 2.67)
 
     def test_cone_structure(self):
         test_cone = Cone()
         self.assertIsInstance(test_cone, Cone)
         self.assertIsInstance(test_cone, Solid)
         self.assertEqual(test_cone.volume, 0)
+        test_cone.calculate_volume(2, 2)
+        self.assertEqual(test_cone.volume, 8.38)
 
     def test_cylinder_structure(self):
         test_cylinder = Cylinder()
         self.assertIsInstance(test_cylinder, Cylinder)
         self.assertIsInstance(test_cylinder, Solid)
         self.assertEqual(test_cylinder.volume, 0)
+        test_cylinder.calculate_volume(2, 4)
+        self.assertEqual(test_cylinder.volume, 50.27)
 
     def test_sphere_structure(self):
         test_sphere = Sphere()
         self.assertIsInstance(test_sphere, Sphere)
         self.assertIsInstance(test_sphere, Solid)
         self.assertEqual(test_sphere.volume, 0)
+        test_sphere.calculate_volume(4)
+        self.assertEqual(test_sphere.volume, 268.08)
 
     def test_block_structure(self):
         test_block = Block()
         self.assertIsInstance(test_block, Block)
         self.assertIsInstance(test_block, Solid)
         self.assertEqual(test_block.volume, 0)
+        test_block.calculate_volume(3, 3, 3)
+        self.assertEqual(test_block.volume, 27)
 
     def test_cube_structure(self):
         test_cube = Cube()
@@ -98,6 +108,8 @@ class Test_shapes(unittest.TestCase):
         self.assertIsInstance(test_cube, Cube)
         self.assertIsInstance(test_cube, Solid)
         self.assertEqual(test_cube.volume, 0)
+        test_cube.calculate_volume(3)
+        self.assertEqual(test_cube.volume, 27)
 
 if __name__ == '__main__':
     unittest.main()
