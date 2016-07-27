@@ -4,6 +4,14 @@ import unittest
 
 class Test_shapes(unittest.TestCase):
 
+    def test_shape_structure(self):
+        test_shape = Shape()
+        self.assertEqual(test_shape.area, 0)
+
+    def test_solid_structure(self):
+        test_solid = Solid()
+        self.assertEqual(test_solid.volume, 0)
+
     def test_rectangle_structure(self):
         test_rectangle = Rectangle()
         self.assertIsInstance(test_rectangle, Rectangle)
@@ -60,7 +68,6 @@ class Test_shapes(unittest.TestCase):
         test_block = Block()
         self.assertIsInstance(test_block, Block)
         self.assertIsInstance(test_block, Solid)
-        self.assertIsInstance(test_block, ThreeD)
 
     def test_cube_structure(self):
         test_cube = Cube()
