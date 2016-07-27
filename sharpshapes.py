@@ -1,79 +1,160 @@
 import math
+from menu import *
 
-class Shape:
+class Shape():
     def __init__(self):
+        # self.name = "shape"
         self.area = 0
-        # TODO: make the 'calculate area function run in the init?'
+
+    def __str__(self):
+        return("the area of your " + self.name + " is " + str(self.area) + ".")
 
 
-class Solid:
+
+class Solid():
     def __init__(self):
+        # self.name = "solid"
         self.volume = 0
-        # TODO: make the 'calculate area function run in the init?'
 
+    def __str__(self):
+        return("the volume of your " + self.name + " is " + str(self.volume) + ".")
 
+    
 ##########SHAPES##########
 
 class Rectangle(Shape):
-    def calculate_area(self, length, width):
-        self.area = length * width
 
+    def __init__(self, length, width):
+        super().__init__()
+        self.length = length
+        self.width = width
+        self.name = "rectangle"
+
+    def calculate_area(self):
+        self.area = round((self.length * self.width), 2)
+        print(self.__str__())
 
 class Square(Rectangle):
-    def calculate_area(self, side):
-        super().calculate_area(side, side)
+    def __init__(self, side):
+        super().__init__(side, side)
+        self.name = "square"
 
 
 class Rhombus(Shape):
-    def calculate_area(self, diagonal_one, diagonal_two):
-        self.area = round((diagonal_one * diagonal_two), 2)
+    def __init__(self, diagonal_one, diagonal_two):
+        super().__init__()
+        self.diagonal_one = diagonal_one
+        self.diagonal_two = diagonal_two
+        self.name = "rhombus"
+
+    def calculate_area(self):
+        self.area = round((self.diagonal_one * self.diagonal_two), 2)
+        print(self.__str__())
 
 
 class Parallelogram(Shape):
-    def calculate_area(self, base, height):
-        self.area = round((base * height), 2)
+    def __init__(self, base, height):
+        super().__init__()
+        self.base = base
+        self.height = height
+        self.name = "parallelogram"
+
+    def calculate_area(self):
+        self.area = round((self.base * self.height), 2)
+        print(self.__str__())
 
 
 class Triangle(Shape):
-    def calculate_area(self, base, height):
-        self.area = round(((base * height) / 2), 2)
+    def __init__(self, base, height):
+        super().__init__()
+        self.base = base
+        self.height = height
+        self.name = "triangle"
+
+    def calculate_area(self):
+        self.area = round(((self.base * self.height) / 2), 2)
+        print(self.__str__())
 
 
 class Circle(Shape):
-    def calculate_area(self, radius):
-        self.area = round(((radius * radius) * math.pi), 2)
+    def __init__(self, radius):
+        super().__init__()
+        self.radius = radius
+        self.name = "circle"
+
+    def calculate_area(self):
+        self.area = round(((self.radius **2) * math.pi), 2)
+        print(self.__str__())
 
 
 #######SOLIDS#######
 
 class Pyramid(Solid):
+    def __init__(self, base_length, base_width, height):
+        super().__init__()
+        self.base_length = base_length
+        self.base_width = base_width
+        self.height = height
+        self.name = "pyramid"
+
     # NOTE: this calculation works for a rectangular pyramid only
-    def calculate_volume(self, base_length, base_width, height):
-        self.volume = round(((base_length * base_width * height) / 3), 2)
+    def calculate_volume(self):
+        self.volume = round(((self.base_length * self.base_width * self.height) / 3), 2)
+        print(self.__str__())
 
 
 class Cone(Solid):
+    def __init__(self, base_radius, height):
+        super().__init__()
+        self.name = "cone"
+        self.base_radius = base_radius
+        self.height = height
 
-    def calculate_volume(self, radius, height):
-        self.volume = round(((radius * radius * height * math.pi)/3), 2)
+    def calculate_volume(self):
+        self.volume = round((((self.base_radius **2) * self.height * math.pi)/3), 2)
+        print(self.__str__())
 
 
 class Cylinder(Solid):
+    def __init__(self, radius, height):
+        super().__init__()
+        self.name = "cylinder"
+        self.radius = radius
+        self.height = height
 
-    def calculate_volume(self, radius, height):
-        self.volume = round((radius*radius*height * math.pi), 2)
+    def calculate_volume(self):
+        self.volume = round(((self.radius **2)*self.height * math.pi), 2)
+        print(self.__str__())
 
 
 class Sphere(Solid):
-    def calculate_volume(self, radius):
-        self.volume = round(((radius*radius*radius*math.pi*4)/3), 2)
+    def __init__(self, radius):
+        super().__init__()
+        self.name = "sphere"
+        self.radius = radius
+
+    def calculate_volume(self):
+        self.volume = round((((self.radius **3)*math.pi*4)/3), 2)
+        print(self.__str__())
 
 
 class Block(Solid):
-    def calculate_volume(self, length, width, height):
-        self.volume = round((length * width * height), 2)
+    def __init__(self, base_length, base_width, height):
+        super().__init__()
+        self.length = base_length
+        self.width = base_width
+        self.height = height
+        self.name = "block"
+
+    def calculate_volume(self):
+        self.volume = round((self.length * self.width * self.height), 2)
+        print(self.__str__())
 
 
 class Cube(Block):
-    def calculate_volume(self, side):
-        super().calculate_volume(side, side, side)
+    def __init__(self, side):
+        super().__init__(side, side, side)
+        self.name = "cube"
+
+if __name__ == '__main__':
+    app = Sharp_Shapes()
