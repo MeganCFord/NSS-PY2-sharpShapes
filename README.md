@@ -6,9 +6,6 @@
 Created as a student exercise as part of Nashville Software School's Back End Bootcamp curriculum. Please see below for fulfilled requirements: this exercise is not meant to be a finished production app or indication of current skills, but rather a demonstration of skills learned and utilized at the time of creation.
 
 
-Any/all images are for educational/example purposes only and are all rights reserved original owners. 
-
-
 ## Instructions
 
 
@@ -28,7 +25,7 @@ cd 2-sharp-shapes
 python sharpshapes.py
 ```
 
-![screenshot](sharpshapes-screenshot.jpg)
+![screenshot](sharpshapes_screenshot.jpg)
 
 
 ## License 
